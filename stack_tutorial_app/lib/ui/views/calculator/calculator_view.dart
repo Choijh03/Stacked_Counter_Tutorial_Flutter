@@ -37,6 +37,24 @@ class CalculatorView extends StackedView<CalculatorViewModel> {
               viewModel.hi,
               style: TextStyle(color: Colors.black, fontSize: 20),
             ),
+            SizedBox(
+              height: 30,
+            ),
+            MaterialButton(
+              onPressed: viewModel.goBack,
+              color: Colors.amber,
+              child: Text('go back to screen before'),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            MaterialButton(
+              onPressed: () {
+                viewModel.showbackdata();
+              },
+              color: Colors.amber,
+              child: Text('show back data'),
+            ),
           ],
         ),
       ),

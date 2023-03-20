@@ -5,6 +5,7 @@ import 'package:stack_tutorial_app/ui/views/startup/startup_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:stack_tutorial_app/ui/views/counter/counter_view.dart';
+import 'package:stack_tutorial_app/ui/views/calculator/calculator_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -12,6 +13,7 @@ import 'package:stack_tutorial_app/ui/views/counter/counter_view.dart';
     MaterialRoute(page: HomeView),
     MaterialRoute(page: StartupView),
     MaterialRoute(page: CounterView),
+    MaterialRoute(page: CalculatorView),
 // @stacked-route
   ],
   dependencies: [

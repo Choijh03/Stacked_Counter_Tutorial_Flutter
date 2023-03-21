@@ -9,12 +9,7 @@ class CalculatorViewModel extends BaseViewModel {
   final String hi = 'hi';
 
   void goBack() {
-    _navigationService.back(result: hi);
-  }
-
-  Future showbackdata() async {
-    _navigationService.back(result: hi);
-    final result = await _navigationService.replaceWithCalculatorView();
-    print('Returned result: $result');
+    //_navigationService.back(result: hi);
+    _navigationService.back();
   }
 }

@@ -18,11 +18,14 @@ class CounterViewModel extends BaseViewModel {
     rebuildUi();
   }
 
-  void CalPage() {
-    _navigationService.navigateToCalculatorView();
+  Future calPage() async {
+    final result = await _navigationService.navigateTo(
+      Routes.calculatorView,
+      arguments: CalculatorViewArguments(anything: 'answer'),
+    );
   }
 
-  void SetText() {
+  void setText() {
     data = textContorller.text.toString();
     rebuildUi();
   }

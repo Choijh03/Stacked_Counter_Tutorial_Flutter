@@ -32,7 +32,7 @@ class CounterView extends StackedView<CounterViewModel> {
               ),
             ),
             MaterialButton(
-              onPressed: viewModel.CalPage,
+              onPressed: viewModel.calPage,
               color: Colors.amber,
               child: Text('Go to Cal'),
             ),
@@ -41,7 +41,7 @@ class CounterView extends StackedView<CounterViewModel> {
             ),
             MaterialButton(
               onPressed: () {
-                viewModel.SetText();
+                viewModel.setText();
                 viewModel.reset();
               },
               color: Colors.amber,

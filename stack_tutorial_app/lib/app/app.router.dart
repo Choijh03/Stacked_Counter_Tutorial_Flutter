@@ -75,8 +75,10 @@ class StackedRouter extends _i1.RouterBase {
       );
     },
     _i5.CalculatorView: (data) {
+      final args = data.getArgs<CalculatorViewArguments>(nullOk: false);
       return _i6.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i5.CalculatorView(),
+        builder: (context) =>
+            _i5.CalculatorView(key: args.key, anything: args.anything),
         settings: data,
         maintainState: false,
       );
@@ -87,6 +89,22 @@ class StackedRouter extends _i1.RouterBase {
   List<_i1.RouteDef> get routes => _routes;
   @override
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
+}
+
+class CalculatorViewArguments {
+  const CalculatorViewArguments({
+    this.key,
+    required this.anything,
+  });
+
+  final _i6.Key? key;
+
+  final String anything;
+
+  @override
+  String toString() {
+    return '{"key": "$key", "anything": "$anything"}';
+  }
 }
 
 extension NavigatorStateExtension on _i7.NavigationService {
@@ -132,14 +150,17 @@ extension NavigatorStateExtension on _i7.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToCalculatorView([
+  Future<dynamic> navigateToCalculatorView({
+    _i6.Key? key,
+    required String anything,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return navigateTo<dynamic>(Routes.calculatorView,
+        arguments: CalculatorViewArguments(key: key, anything: anything),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -188,14 +209,17 @@ extension NavigatorStateExtension on _i7.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithCalculatorView([
+  Future<dynamic> replaceWithCalculatorView({
+    _i6.Key? key,
+    required String anything,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return replaceWith<dynamic>(Routes.calculatorView,
+        arguments: CalculatorViewArguments(key: key, anything: anything),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

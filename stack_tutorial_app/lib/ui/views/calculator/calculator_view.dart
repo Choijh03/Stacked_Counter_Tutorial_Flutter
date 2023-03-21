@@ -4,8 +4,10 @@ import 'package:stacked/stacked.dart';
 import 'calculator_viewmodel.dart';
 
 class CalculatorView extends StackedView<CalculatorViewModel> {
+  final String anything;
   const CalculatorView({
     Key? key,
+    required this.anything,
   }) : super(key: key);
 
   @override
@@ -34,7 +36,7 @@ class CalculatorView extends StackedView<CalculatorViewModel> {
               ),
             ),
             Text(
-              viewModel.hi,
+              anything,
               style: TextStyle(color: Colors.black, fontSize: 20),
             ),
             SizedBox(
@@ -49,9 +51,7 @@ class CalculatorView extends StackedView<CalculatorViewModel> {
               height: 30,
             ),
             MaterialButton(
-              onPressed: () {
-                viewModel.showbackdata();
-              },
+              onPressed: () {},
               color: Colors.amber,
               child: Text('show back data'),
             ),
